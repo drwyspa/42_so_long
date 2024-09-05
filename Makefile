@@ -6,20 +6,28 @@
 #    By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/29 17:40:45 by pjedrycz          #+#    #+#              #
-#    Updated: 2024/08/29 19:01:54 by pjedrycz         ###   ########.fr        #
+#    Updated: 2024/09/03 21:34:45 by pjedrycz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= so_long
 
-!!!!!!!!SRCS		= - tutaj dodamy więcej plików, ze względu na rozszerzoną walidację ścieżki vs norminette.
+SRCS		= src/so_long.c \
+		  	src/map_validation.c \
+		  	src/path_validation.c \
+			src/path_validation_utils.c \
+		  	src/movement_handling.c \
+		  	src/elements_drawing.c \
+		  	src/ft_split.c \
+		  	src/utils.c \
+			src/utils2.c
 
 OBJS_DIR	= obj
 OBJS		= $(patsubst src/%.c, $(OBJS_DIR)/%.o, $(SRCS))
 
 CC			= gcc
 
-CFLAGS		= -Wall -Werror -Wextra -I include/
+CFLAGS		= -Wall -Werror -Wextra -I includes/
 LDFLAGS		= -Lmlx -lmlx -L/usr/lib/x11 -lXext -lX11
 
 $(OBJS_DIR)/%.o: src/%.c

@@ -6,7 +6,7 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 21:07:21 by pjedrycz          #+#    #+#             */
-/*   Updated: 2024/08/28 22:15:39 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2024/09/03 22:46:27 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 
 # define BUFFER_SIZE 4096
 # define TILE_SIZE 64
-# define GAME_TITLE "roboczy"
+# define GAME_TITLE "Goblins mine"
 
 //Error definition.
 //This way we don't have to use ft_printf. 
@@ -72,9 +72,9 @@ typedef struct t_data
 
 typedef struct t_point_data
 {
-	t_point	new_point_dir[4];
-	t_point	*visited_points;
-	size_t	v_point_size;
+	t_point	new_pnt_dir[4];
+	t_point	*visited_pnts;
+	size_t	v_pnt_size;
 	int		path_exists_flg;
 }	t_point_data;
 
@@ -103,5 +103,12 @@ void	free_map_grid(t_data *data);
 void	free_textures(t_data *data);
 char	*ft_itoa(int n);
 size_t	ft_strlen(const char *s);
+
+//Path utils
+int		pnt_already_visited(t_point_data *pnt_data, t_point now_pnt);
+void	check_path_to_exit(char **map_grid_ptr,
+			t_point_data *pnt_data, t_point now_pnt);
+void	check_path_from_coll(char **map_grid_ptr,
+			t_point_data *pnt_data, t_point now_pnt);
 
 #endif

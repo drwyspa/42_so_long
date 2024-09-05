@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   movement_handling.c                                :+:      :+:    :+:   */
+/*   movement_handling_old.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 21:35:43 by pjedrycz          #+#    #+#             */
-/*   Updated: 2024/08/28 22:20:31 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2024/09/05 21:11:56 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static int	check_next_move(t_data *data, t_point next_pos)
 	else if (map->map_grid[next_pos.y][next_pos.x] == 'C')
 	{
 		map->coll_cnt--;
-		map->map_grid[next_pos.y][next_pos.x] == '0';
+		map->map_grid[next_pos.y][next_pos.x] = '0';
 		if (map->coll_cnt == 0)
 			mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
 				data->textures[5], data->map->exit_pos.x * TILE_SIZE,
@@ -78,6 +78,7 @@ static void	update_and_draw_player_new_position(t_data *data, int keysym)
 	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
 		data->textures[0], map->player_pos.x * TILE_SIZE,
 		map->player_pos.y * TILE_SIZE);
+	map->player_pos = calc_next_player_position(map->player_pos, keysym);
 	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
 		data->textures[3], map->player_pos.x * TILE_SIZE,
 		map->player_pos.y * TILE_SIZE);

@@ -6,7 +6,7 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 22:26:19 by pjedrycz          #+#    #+#             */
-/*   Updated: 2024/08/20 20:46:08 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2024/09/03 18:34:59 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ char	**ft_split(const char *s, char c)
 	int		s_word;
 
 	ft_initiate_vars(&i, &j, &s_word);
-	res = ft_calloc((ft_words(s, c) + 1), sizeof(char *));
+	res = (char **)malloc((ft_words(s, c) + 1) * sizeof(char *));
 	if (!res)
 		return (NULL);
 	while (i <= ft_strlen(s))
