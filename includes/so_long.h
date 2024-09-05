@@ -6,7 +6,7 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 21:07:21 by pjedrycz          #+#    #+#             */
-/*   Updated: 2024/09/03 22:46:27 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2024/09/05 22:05:47 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@
 //The whole code will be simplier.
 //
 # define ERR_MALLOC "Error - memory allocation failed"
-# define ERR_FILE "Error - oper or read file failure"
+# define ERR_FILE "Error - open or read file failure"
 # define ERR_NO_FILE_PATH "Error - wrong path to map file"
 # define ERR_NO_RECT "Error - your map should be a rectangle"
 # define ERR_NO_ITEMS "Error - missing player position or collectibles"
 # define ERR_UNDEF_ITEM "Error - undefined element on the map"
 # define ERR_NOT_CLOSED "Error - check the map borders"
-# define ERR_NO_PATH "Error - missing correct parh between items and exit"
+# define ERR_NO_PATH "Error - missing correct path between items and exit"
 # define ERR_MLX "Error - MLX initialization fail"
 # define ERR_MLX_WIN "Error - MLX - window creation fail"
 
