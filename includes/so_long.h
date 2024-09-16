@@ -6,7 +6,7 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 21:07:21 by pjedrycz          #+#    #+#             */
-/*   Updated: 2024/09/05 22:05:47 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2024/09/16 20:41:42 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@
 # define ERR_NO_PATH "Error - missing correct path between items and exit"
 # define ERR_MLX "Error - MLX initialization fail"
 # define ERR_MLX_WIN "Error - MLX - window creation fail"
+# define ERR_EMPTY_ROW "Error - no empty rows please"
 
 typedef struct t_point
 {

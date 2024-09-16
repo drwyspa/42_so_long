@@ -6,7 +6,7 @@
 #    By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/29 17:40:45 by pjedrycz          #+#    #+#              #
-#    Updated: 2024/09/03 21:34:45 by pjedrycz         ###   ########.fr        #
+#    Updated: 2024/09/16 18:33:50 by pjedrycz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,10 +33,10 @@ LDFLAGS		= -Lmlx -lmlx -L/usr/lib/x11 -lXext -lX11
 $(OBJS_DIR)/%.o: src/%.c
 	@echo "Compilation im progress $<..."
 	@mkdir -p $(OBJS_DIR)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c -g $< -o $@
 
 $(NAME):	$(OBJS)
-	@$(CC) $(OBJS) $(LDFLAGS) -o $(NAME)
+	@$(CC) $(OBJS) $(LDFLAGS) -g -o $(NAME)
 	@echo "Compilation of $(NAME) is completed."
 
 all:		mlx $(NAME)
